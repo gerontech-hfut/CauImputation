@@ -49,7 +49,8 @@ This codebase is compatible with MATLAB 2021b. Ensure you have this version or l
     ```matlab
     imputed_data = CauPKNN_RBF_kernel(missing_data);
     ```
-3. **Evaluate the imputed data** using RMSE:
+3. **Evaluate the imputed data** using RMSE or MAE:
     ```matlab
-    rmse = RMSE_compute(missing_data, complete_data, imputed_data);
+    rmse = sqrt(mean((complete_data(:) - imputed_data(:)).^2));
+    mae = mean(abs(complete_data(:) - imputed_data(:)));
     ```
