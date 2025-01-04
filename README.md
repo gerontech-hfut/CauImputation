@@ -9,7 +9,7 @@ Missing data is a significant challenge in data analysis, particularly in biomed
 ## Key Features
 
 - Implements Polynomial, Linear, and RBF kernel methods for neighbor selection.
-- Integrates K-Nearest-Neighbor (KNN) and Local Least Squares (LLS) imputation methods.
+- Integrates Local Least Squares (LLS) imputation methods.
 - Evaluates performance on real-world biomedical datasets.
 - Provides both RMSE and MAE metrics for performance evaluation.
 
@@ -30,13 +30,6 @@ These datasets correspond to the gene microarray datasets mentioned in the paper
 
 This codebase is compatible with MATLAB 2021b. Ensure you have this version or later installed on your system.
 
-## Usage
-
-### Available Imputation Methods
-
-- **Polynomial Kernel Imputation**: `CauPKNN_Polynomial_kernel.m`
-- **RBF Kernel Imputation**: `CauPKNN_RBF_kernel.m`
-- **Linear Imputation**: `CauPKNN_linear_Causal.m`
 
 ### Running the Imputation
 
@@ -47,7 +40,7 @@ This codebase is compatible with MATLAB 2021b. Ensure you have this version or l
     ```
 2. **Choose an imputation method**:
     ```matlab
-    imputed_data = CauPKNN_RBF_kernel(missing_data);
+    imputed_data = CauPLLS_continuity(missing_data);
     ```
 3. **Evaluate the imputed data** using RMSE or MAE:
     ```matlab
